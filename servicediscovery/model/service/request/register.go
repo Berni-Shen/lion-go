@@ -1,5 +1,6 @@
 package request
 
+// Service is the information of the service for register.
 type Service struct {
 	Name         string
 	Version      int

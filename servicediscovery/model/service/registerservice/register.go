@@ -1,15 +1,15 @@
 package registerservice
 
 import (
-	"lion-go/oauth2/model/utils"
-	"lion-go/servicediscovery/model/dao/dbpool"
-	"lion-go/servicediscovery/model/dao/entities"
-	"lion-go/servicediscovery/model/service/request"
+	"github.com/Berni-Shen/lion-go/servicediscovery/model/dao/dbpool"
+	"github.com/Berni-Shen/lion-go/servicediscovery/model/dao/entities"
+	"github.com/Berni-Shen/lion-go/servicediscovery/model/service/request"
+	"github.com/Berni-Shen/lion-go/utils"
 )
 
-func Register() *utils.Exception {
+// func Register() *utils.Exception {
 
-}
+// }
 
 func saveService(service *request.Service) *utils.Exception {
 	db, err := dbpool.Take()
@@ -27,10 +27,10 @@ func saveService(service *request.Service) *utils.Exception {
 		db.Create(s)
 	}
 
-	var r *entities.Resouce
+	var r *entities.Resource
 	db.First(r, "ServiceID=?", s.ID)
 	if r == nil {
-		r = new(entities.Resouce)
+		r = new(entities.Resource)
 		r.ID = s.ID
 		r.GetMethod = service.GetMethod
 		r.PostMethod = service.PostMethod

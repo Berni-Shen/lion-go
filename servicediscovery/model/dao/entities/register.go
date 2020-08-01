@@ -1,5 +1,6 @@
 package entities
 
+// Service :  the information of service .
 type Service struct {
 	BaseModel
 	Name        string
@@ -7,6 +8,7 @@ type Service struct {
 	Description string
 }
 
+// Instance : the information of service instance .
 type Instance struct {
 	BaseModel
 	ServiceID string
@@ -14,7 +16,8 @@ type Instance struct {
 	Port      string
 }
 
-type Resouce struct {
+// Resource : the entities of service resource.
+type Resource struct {
 	BaseModel
 	ServiceID    string
 	GetMethod    string

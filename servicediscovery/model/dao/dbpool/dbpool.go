@@ -1,8 +1,9 @@
 package dbpool
 
 import (
-	"lion-go/oauth2/model/utils"
 	"time"
+
+	"github.com/Berni-Shen/lion-go/utils"
 
 	// gorm use and connection to mysql.
 	_ "github.com/go-sql-driver/mysql"
